@@ -1,0 +1,48 @@
+<mat-card class="mat-card mat-focus-indicator">
+  <mat-card-title>{{ 'register.title' | translate }}</mat-card-title>
+  <mat-card-content>
+    <form class="example-form" #userForm="ngForm">
+      <table class="example-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <mat-label>{{ 'register.label.user' | translate }}</mat-label>
+              <input id="name" matInput required [(ngModel)]="user.name" name="name" maxlength="100">
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <mat-label>{{ 'register.label.email' | translate }}</mat-label>
+              <input id="email" matInput required [(ngModel)]="user.email" name="email" maxlength="100">
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <mat-label>{{ 'register.label.bio' | translate }}</mat-label>
+              <input id="bio" matInput required [(ngModel)]="user.bio" name="bio" maxlength="500">
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <td colspan="2">
+            <button type="button" class="btn btn-primary" (click)="onSubmit(userForm)" [disabled]="!userForm.valid">{{ 'button.submit' | translate }}</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+    <div *ngIf="processStatus$ | async as processStatus">
+      <div *ngIf="processStatus">
+        {{ user.name }} is created successfully
+      </div>
+      <div *ngIf="!processStatus">
+        {{ user.name }} is failed to be created
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

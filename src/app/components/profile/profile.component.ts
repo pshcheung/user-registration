@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {generateUser, User} from "../../models";
 
 @Component({
   selector: 'app-profile',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
+  readonly user: User;
 
-  constructor() { }
+  constructor() {
+    this.user = generateUser();
+  }
 
   ngOnInit(): void {
   }
-
 }

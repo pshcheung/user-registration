@@ -1,0 +1,88 @@
+<mat-sidenav-container>
+  <mat-sidenav  #sidenav role="navigation">
+    <mat-nav-list>
+<!--      <a *ngIf="(user$ | async) === null" mat-list-item routerLink="/">
+        <mat-icon class="icon">login</mat-icon>
+        <span class="label">Login</span>
+      </a>-->
+      <a mat-list-item routerLink="/">
+        <mat-icon class="icon">home</mat-icon>
+        <span class="label">Home</span>
+      </a>
+<!--      <div *ngIf="user$ | async as user">
+        <a *ngIf="user.roles.includes(ADMIN_ROLE)" mat-list-item routerLink="/admin">
+          <mat-icon class="icon">manage_accounts</mat-icon>
+          <span class="label">Admin</span>
+        </a>
+        <a mat-list-item routerLink="/members">
+          <mat-icon class="icon">account_box</mat-icon>
+          <span class="label">Member</span>
+        </a>
+        <a mat-list-item type="button">
+          <mat-icon class="icon">logout</mat-icon>
+          <span class="label">LogOut</span>
+        </a>
+      </div>-->
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <div fxHide.gt-xs>
+        <button mat-icon-button (click)="sidenav.toggle()" style="color: inherit;background: transparent;border: 0;padding-top: 10px">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+      <div>
+        <a routerLink="/">
+          User Registration
+        </a>
+      </div>
+      <div fxFlex fxLayout fxLayoutAlign="flex-end"  fxHide.xs>
+        <ul fxLayout fxLayoutGap="20px" class="navigation-items">
+          <li>
+            <a routerLink="/register">
+              <mat-icon class="icon">manage_accounts</mat-icon>
+              <span class="label">Registration</span>
+            </a>
+          </li>
+          <li>
+            <a routerLink="/profile">
+              <mat-icon class="icon">account_box</mat-icon>
+              <span class="label">Profile</span>
+            </a>
+          </li>
+        </ul>
+        <!--        <ul fxLayout fxLayoutGap="20px" class="navigation-items">
+                  <li>
+                    <a *ngIf="(user$ | async) === null" routerLink="/">
+                      <mat-icon class="icon">login</mat-icon>
+                      <span class="label">Login</span>
+                    </a>
+                  </li>
+                  <li *ngIf="user$ | async as user">
+                    <a *ngIf="user.roles.includes(ADMIN_ROLE)" routerLink="/admin">
+                      <mat-icon class="icon">manage_accounts</mat-icon>
+                      <span  class="label">Admin</span>
+                    </a>
+                  </li>
+                  <li *ngIf="user$ | async as user">
+                    <a routerLink="/members">
+                      <mat-icon class="icon">account_box</mat-icon>
+                      <span class="label">Member</span>
+                    </a>
+                  </li>
+                  <li *ngIf="user$ | async as user">
+                    <a (click)="openModal({ contentText: 'Do you want to confirm?', confirmButtonLabel: 'Yes', declineButtonLabel: 'No' })">
+                      <mat-icon class="icon">logout</mat-icon>
+                      <span class="label">LogOut</span>
+                    </a>
+                  </li>
+                </ul>-->
+      </div>
+    </mat-toolbar>
+    <main>
+<!--      <alert></alert>-->
+      <router-outlet></router-outlet>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>

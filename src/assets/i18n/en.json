@@ -1,0 +1,16 @@
+{
+  "profile": {
+    "title": "User Profile"
+  },
+  "register": {
+    "title": "User Registration",
+    "label" : {
+      "bio": "Bio",
+      "email": "Email",
+      "user": "User"
+    }
+  },
+  "button": {
+    "submit": "Submit"
+  }
+}
