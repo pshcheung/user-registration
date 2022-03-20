@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { ProfileComponent,
-         RegisterComponent } from "./components";
+         RegisterComponent } from "@app/components";
 
 const routes: Routes = [
   {

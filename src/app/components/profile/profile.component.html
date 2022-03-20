@@ -1,12 +1,19 @@
 <div class="container">
   <div fxLayout="row" fxLayoutAlign="center center" class="content">
-    <mat-card class="card" >
-      <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
-        <h3>{{ 'profile.title' | translate }}</h3>
-      </mat-card-title>
+    <mat-card class="card" *ngIf="profile$ | async as profile">
+      <mat-card-header>
+        <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
+          <h3>{{ 'profile.title' | translate }}</h3>
+        </mat-card-title>
+        <mat-card-subtitle>
+          <h4>{{ profile.name }}</h4>
+        </mat-card-subtitle>
+      </mat-card-header>
+      <a href="{{profile.img}}" alt="photo">Photo</a>
       <mat-card-content>
+          Email: {{ profile.email }}
         <div class="example-container mat-elevation-z8">
-          {{ user.name }}
+          {{ profile.bio }}
         </div>
       </mat-card-content>
     </mat-card>
